@@ -5,9 +5,13 @@ import {
 } from "astro/config";
 
 
+import cloudflare from "@astrojs/cloudflare";
+
+
 // https://astro.build/config
 export default defineConfig({
   scopedStyleStrategy: 'where',
+
   experimental: {
     fonts: [
       {
@@ -24,4 +28,6 @@ export default defineConfig({
       },
     ],
   },
+
+  adapter: cloudflare(),
 });
