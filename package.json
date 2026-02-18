@@ -1,5 +1,5 @@
 {
-    "name": "viio",
+    "name": "my-lyrics-app",
     "type": "module",
     "version": "0.0.1",
     "scripts": {
@@ -9,6 +9,8 @@
         "astro": "astro"
     },
     "dependencies": {
+        "@astrojs/cloudflare": "^12.6.12",
+        "@astrojs/upgrade": "^0.6.2",
         "@csstools/postcss-global-data": "^3.0.0",
         "@pmndrs/vanilla": "^1.25.0",
         "astro": "^5.16.11",

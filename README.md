@@ -1,6 +1,6 @@
-# VIIO Astro Theme
+# MyLyricsApp
 
-VIIO is an experimental Astro landing page theme featuring interactive Three.js elements.
+MyLyricsApp is an experimental Astro landing page theme featuring interactive Three.js elements.
 
 ## Getting Started
 
@@ -12,7 +12,7 @@ Edit the following files to customize links, content, and layout details:
 ## Preview
 
 Live preview:  
-https://viio.pages.dev/
+https://mylyricsapp.pages.dev/
 
 ## Installation
 
