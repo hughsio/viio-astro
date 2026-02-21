@@ -66,13 +66,10 @@ const { logoUrl, logoAlt, links } = Astro.props;
     position: relative;
     z-index: 3;
 
-    svg {
+    img {
       width: 4.8rem;
-      height: 1.5rem;
-
-      :global(path) {
-        fill: currentcolor;
-      }
+      height: auto;
+      display: block;
     }
   }
 

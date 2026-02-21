@@ -1,6 +1,6 @@
 ---
 import Button from "./Button.astro";
-import Logo from "../assets/logo.svg";
+import logoImage from "../assets/MyStereo.png";
 import type { Link } from "../types";
 
 interface Props {
@@ -19,7 +19,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     <div class="inner u-container">
       <div class="wrapper">
         <a class="logo" href={logoUrl}>
-          <Logo />
+          <img src={logoImage.src} alt={logoAlt} />
           <span class="u-sr-only">{logoAlt}</span>
         </a>
 
@@ -130,12 +130,10 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     position: relative;
     z-index: 3;
 
-    svg {
-      width: 2.4rem;
-
-      :global(path) {
-        fill: currentcolor;
-      }
+    img {
+      width: 6.4rem;
+      height: auto;
+      display: block;
     }
   }
 
