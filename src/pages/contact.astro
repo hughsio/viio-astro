@@ -2,26 +2,247 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Contact Us | MyLyricsApp">
-    <main class="max-w-2xl mx-auto">
-        <h1 class="text-4xl font-bold">Contact Us</h1>
-        <p class="text-gray-500">
-            We're here to help you with any questions or concerns you may have.
+<Layout title="Contact Us | MyStereo">
+  <section class="contact">
+    <div class="contact-bg" aria-hidden="true"></div>
+    <div class="contact-inner u-container">
+      <header class="contact-header">
+        <h1 class="contact-title">Contact Us</h1>
+        <p class="contact-lead">
+          We're here to help you with any questions or concerns you may have.
         </p>
-        <form action="" class="space-y-4">
-            <div class="space-y-2">
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-            </div>
-            <div class="space-y-2">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-            </div>
-            <div class="space-y-2">
-                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-            </div>
-            <button type="submit" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Send</button>
-        </form>
-    </main>
+      </header>
+
+      <form class="contact-form" action="" method="post">
+        <div class="contact-field">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="Your name"
+          />
+        </div>
+        <div class="contact-field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="you@example.com"
+          />
+        </div>
+        <div class="contact-field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            placeholder="How can we help?"
+          ></textarea>
+        </div>
+        <button type="submit" class="contact-submit">Send message</button>
+      </form>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .contact {
+    position: relative;
+    overflow: hidden;
+    padding: 7rem 0 6rem;
+    color: var(--color-text);
+    min-height: 100vh;
+  }
+
+  .contact-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .contact-bg::before,
+  .contact-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-bg::before {
+    background: linear-gradient(
+      40deg,
+      var(--color-bg) 0%,
+      2.76008%,
+      rgb(255, 237, 220) 5.52017%,
+      9.87983%,
+      rgb(252, 221, 187) 14.2395%,
+      17.7994%,
+      rgb(248, 190, 160) 21.3592%,
+      24.4337%,
+      rgb(240, 168, 150) 27.5081%,
+      30.2589%,
+      rgb(231, 150, 151) 33.0097%,
+      35.5987%,
+      rgb(222, 136, 162) 38.1877%,
+      40.7767%,
+      rgb(211, 132, 177) 43.3657%,
+      46.6019%,
+      rgb(200, 136, 198) 49.8382%,
+      53.3981%,
+      rgb(198, 155, 219) 56.9579%,
+      60.356%,
+      rgb(203, 181, 234) 63.754%,
+      67.475%,
+      rgb(213, 201, 242) 71.196%,
+      75.0531%,
+      rgb(224, 220, 248) 78.9101%,
+      83.5457%,
+      rgb(242, 241, 255) 88.1812%,
+      94.0906%,
+      var(--color-bg) 100%
+    );
+    background-position: center;
+    mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 100%);
+  }
+
+  .contact-bg::after {
+    backdrop-filter: blur(5px);
+  }
+
+  .contact-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  .contact-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-title {
+    font: 400 2.25rem / 1.2 var(--font-roboto-slab);
+    color: var(--color-text);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-lead {
+    font-size: var(--font-size-md);
+    color: var(--color-text-alt);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-field label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 2px solid rgba(var(--rgb-text-alt), 0.25);
+    border-radius: 0.75rem;
+    transition: border-color 0.2s var(--ease-out-cubic),
+      box-shadow 0.2s var(--ease-out-cubic);
+    resize: vertical;
+  }
+
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder {
+    color: var(--color-text-alt);
+    opacity: 0.8;
+  }
+
+  .contact-field input:hover,
+  .contact-field textarea:hover {
+    border-color: rgba(var(--rgb-text-alt), 0.4);
+  }
+
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    outline: none;
+    border-color: var(--color-brand-1);
+    box-shadow: 0 0 0 3px rgba(var(--rgb-brand-1), 0.2);
+  }
+
+  .contact-submit {
+    margin-top: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    font: inherit;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--color-white);
+    background: var(--color-brand-1);
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s var(--ease-out-cubic),
+      transform 0.15s var(--ease-out-cubic);
+  }
+
+  .contact-submit:hover {
+    background: var(--color-brand-5);
+  }
+
+  .contact-submit:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--rgb-brand-1), 0.35);
+  }
+
+  .contact-submit:active {
+    transform: scale(0.98);
+  }
+
+  @media (--mq-tablet) {
+    .contact {
+      padding: 6rem 0 4rem;
+    }
+
+    .contact-title {
+      font-size: 1.875rem;
+    }
+  }
+
+  @media (--mq-phone) {
+    .contact {
+      padding: 5.5rem 0 3rem;
+    }
+
+    .contact-title {
+      font-size: 1.5rem;
+    }
+
+    .contact-header {
+      margin-bottom: 1.75rem;
+    }
+  }
+</style>
