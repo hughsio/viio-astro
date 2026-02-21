@@ -16,11 +16,11 @@
 
   --rgb-text: 11, 31, 91; /* #0b1f5b */
   --rgb-text-alt: 132, 142, 172; /* #848eac */
-  --rgb-brand-1: 249, 115, 22; /* #f97316 orange */
-  --rgb-brand-2: 254, 215, 170; /* #fed7aa */
-  --rgb-brand-3: 255, 237, 213; /* #ffedd5 */
-  --rgb-brand-4: 254, 243, 199; /* #fef3c7 */
-  --rgb-brand-5: 234, 88, 12; /* #ea580c */
+  --rgb-brand-1: 59, 130, 246; /* #3b82f6 tech blue */
+  --rgb-brand-2: 191, 219, 254; /* #bfdbfe */
+  --rgb-brand-3: 219, 234, 254; /* #dbeafe */
+  --rgb-brand-4: 239, 246, 255; /* #eff6ff */
+  --rgb-brand-5: 37, 99, 235; /* #2563eb */
 
   --color-text: rgb(var(--rgb-text));
   --color-text-alt: rgb(var(--rgb-text-alt));
